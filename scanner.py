@@ -1,10 +1,13 @@
-
+import os
+from dotenv import load_dotenv
 import nmap
 import psycopg2
 
+load_dotenv()
+
 DB_NAME = "security_monitor"
 DB_USER = "secmon"
-DB_PASS = "Hockeypro52372!"
+DB_PASS = os.getenv("DB_PASS")
 DB_HOST = "localhost"
 
 scanner = nmap.PortScanner()
